@@ -48,6 +48,7 @@
 #include "AP_RangeFinder_SITL.h"
 #include "AP_RangeFinder_MSP.h"
 #include "AP_RangeFinder_USD1_CAN.h"
+#include "AP_RangeFinder_A02YYUW.h"
 
 #include <AP_BoardConfig/AP_BoardConfig.h>
 #include <AP_Logger/AP_Logger.h>
@@ -575,6 +576,11 @@ void RangeFinder::detect_instance(uint8_t instance, uint8_t& serial_instance)
         _add_backend(new AP_RangeFinder_USD1_CAN(state[instance], params[instance]), instance);
         break;
 #endif
+    case Type::A02YYUW:
+        if (AP_RangeFinder_A02YYUW::detect(serial_instance)) {
+            _add_backend(new AP_RangeFinder_A02YYUW(state[instance], params[instance], serial_instance++), instance);
+        }
+        break;
     case Type::NONE:
     default:
         break;

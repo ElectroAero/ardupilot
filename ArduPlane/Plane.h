@@ -981,6 +981,12 @@ private:
     void update_flight_stage();
     void set_flight_stage(AP_Vehicle::FixedWing::FlightStage fs);
 
+    // Electro_loop.cpp
+    void Electro_loop(void);
+    float scale_pwm(uint16_t n);
+    float scale_pwm_rc(uint16_t n);
+    float mixer_limit(float n);
+
     // navigation.cpp
     void set_nav_controller(void);
     void loiter_angle_reset(void);

@@ -89,6 +89,7 @@ public:
         MSP = 32,
         USD1_CAN = 33,
         SIM = 100,
+        A02YYUW = 40,
     };
 
     enum class Function {
