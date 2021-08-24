@@ -1,3 +1,13 @@
+Steps:
+1. git clone https://github.com/ElectroAero/ardupilot.git
+2. cd ardupilot/
+3. Tools/environment_install/install-prereqs-ubuntu.sh -y
+4. ./waf configure --board CubeYellow
+5. ./waf --target bin/arduplane --upload
+
+Original Readme.md below
+**************************************
+
 # ArduPilot Project
 
 <a href="https://ardupilot.org/discord"><img src="https://img.shields.io/discord/674039678562861068.svg" alt="Discord">
